@@ -10,3 +10,16 @@ diff -Naur gcc-6.3.0.old/gcc/ubsan.c gcc-6.3.0/gcc/ubsan.c
        || xloc.file[1] == '\xff')
      return false;
  
+diff -Naur gcc-6.3.0.old/gcc/config/m68k/m68k.h gcc-6.3.0/gcc/config/m68k/m68k.h
+--- gcc-6.3.0.old/gcc/config/m68k/m68k.h	2016-01-04 15:30:50.000000000 +0100
++++ gcc-6.3.0/gcc/config/m68k/m68k.h	2020-08-31 20:54:21.229514835 +0200
+@@ -313,6 +313,8 @@
+ 
+ #define INT_TYPE_SIZE (TARGET_SHORT ? 16 : 32)
+ 
++#define BOOL_TYPE_SIZE 16
++
+ /* Define these to avoid dependence on meaning of `int'.  */
+ #define WCHAR_TYPE "long int"
+ #define WCHAR_TYPE_SIZE 32
+

@@ -56,7 +56,7 @@ $(WORKDIR)/build-newlib:
 	$(MAKE) -C $@ all install DESTDIR= $(LOG)
 
 build-gcc-2:
-	cd $(WORKDIR)/build-gcc &&  ../gcc-$(GCC_VERSION)/configure --host=$(HOST) --target=m68k-elf --prefix=$(BUILDDIR) --with-newlib --disable-libssp --disable-tls --enable-threads=single --enable-languages=c --with-cpu=m68000 --disable-werror --disable-nls --disable-multilib
+	cd $(WORKDIR)/build-gcc &&  ../gcc-$(GCC_VERSION)/configure --host=$(HOST) --target=m68k-elf --prefix=$(BUILDDIR) --with-newlib --disable-libssp --disable-tls --enable-threads=single --enable-languages=c,c++ --with-cpu=m68000 --disable-werror --disable-nls --disable-multilib --disable-libstdcxx
 	$(MAKE) -C $(WORKDIR)/build-gcc all install DESTDIR= $(LOG)
 	cp $(BUILDDIR)/lib/gcc/m68k-elf/$(GCC_VERSION)/libgcc.a $(BUILDDIR)/lib/.
 
